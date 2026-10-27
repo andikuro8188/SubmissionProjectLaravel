@@ -4,7 +4,7 @@
 @section('title', 'Profil Mahasiswa')
 
 @section('content')
-    <p><strong>Nama:</strong>Andi Kurniawan {{ $nama }}</p>
+    <p><strong>Nama:</strong> {{ $nama }}</p>
     <p><strong>NIM:</strong> {{ $nim }}</p>
     <p><strong>Program Studi:</strong> {{ $prodi }}</p>
 
