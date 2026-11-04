@@ -1,11 +1,33 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daftar Jurusan</title>
 </head>
 <body>
-    Hello Worlds
+    <h1>Daftar Jurusan</h1>
+
+    <table border="1" cellpadding="6">
+        <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Nama Jurusan</th>
+            <th>Dibuat</th>
+        </tr>
+
+        @forelse ($jurusans as $j)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $j->kode }}</td>
+                <td>{{ $j->nama }}</td>
+                <td>{{ $j->created_at->format('d-m-Y H:i') }}</td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="4">Belum ada data.</td>
+            </tr>
+        @endforelse
+    </table>
 </body>
 </html>

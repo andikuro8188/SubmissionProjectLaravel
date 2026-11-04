@@ -4,8 +4,7 @@
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
-
+use App\Http\Controllers\JurusanController;
 
 Route::get('/', function () {
     return redirect()->route('mahasiswa.profil');
@@ -23,3 +22,5 @@ Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])
 Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/products/{id}', [ProductController::class, 'show']);
+
+Route::get('/jurusan', [JurusanController::class, 'index']);
